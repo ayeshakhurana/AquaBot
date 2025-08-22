@@ -226,10 +226,10 @@ const Dashboard: React.FC = () => {
               <motion.div
                 key={stat.label}
                 whileHover={{ y: -4, scale: 1.02 }}
-                className={`${stat.bgPattern} backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden`}
+                className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden"
               >
                 {/* Background Pattern */}
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
                   <stat.icon className="w-full h-full text-gray-400" />
                 </div>
                 
@@ -283,7 +283,7 @@ const Dashboard: React.FC = () => {
                     whileHover={{ y: -2, scale: 1.02 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={action.action}
-                    className={`${action.bgColor} ${action.borderColor} border rounded-xl p-4 text-left group cursor-pointer transition-all duration-300 hover:shadow-lg`}
+                    className="bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-xl p-4 text-left group cursor-pointer transition-all duration-300 hover:shadow-lg hover:bg-white/80"
                   >
                     <div className={`w-12 h-12 bg-gradient-to-br ${action.color} rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:shadow-xl transition-shadow duration-300`}>
                       <action.icon className="w-6 h-6 text-white" />
@@ -325,11 +325,11 @@ const Dashboard: React.FC = () => {
                       }`}>
                         <ArrowUp className="w-4 h-4 mr-1" />
                         {port.change}
-                      </div>
-                    </div>
-                  </div>
+            </div>
+          </div>
+            </div>
                 ))}
-              </div>
+          </div>
             </div>
           </div>
         </motion.div>
@@ -379,7 +379,7 @@ const Dashboard: React.FC = () => {
                     <WeatherWidget />
                   </div>
                 </div>
-
+                
                 {/* Port Map */}
                 <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 shadow-sm">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
@@ -391,7 +391,7 @@ const Dashboard: React.FC = () => {
                   </div>
                 </div>
               </div>
-
+              
               {/* Recent Activity */}
               <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center justify-between mb-6">
@@ -434,7 +434,7 @@ const Dashboard: React.FC = () => {
               </h3>
               <div className="h-96">
                 <ChatBox />
-              </div>
+            </div>
             </motion.div>
           )}
 
