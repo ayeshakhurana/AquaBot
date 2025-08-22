@@ -1,0 +1,5 @@
+# See backend/requirements.txt for backend dependencies.
+# Frontend dependencies are managed by frontend/package.json.
+
+# Kept for compatibility if someone installs from project root:
+-r backend/requirements.txt 
