@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Paperclip, Send, X, MessageSquare } from 'lucide-react';
+import { API_ENDPOINTS } from '../utils/api';
 
 interface Message {
   id: string;
@@ -150,7 +151,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ className = "", documentContext = "" 
         setMessages(prev => [...prev, aiMessage]);
       } else {
         // Regular API call
-        const response = await fetch('http://localhost:8000/api/chat', {
+        const response = await fetch(API_ENDPOINTS.chat, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
