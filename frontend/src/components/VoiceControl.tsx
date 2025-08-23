@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { API_ENDPOINTS } from '../utils/api';
 
 const VoiceControl: React.FC = () => {
   const [isRecording, setIsRecording] = useState(false);
@@ -76,7 +77,7 @@ const VoiceControl: React.FC = () => {
       const form = new FormData();
       form.append('file', blob, 'voice.webm');
 
-      const res = await fetch('http://localhost:8000/api/voice/transcribe', {
+      const res = await fetch(API_ENDPOINTS.voice, {
         method: 'POST',
         body: form,
       });

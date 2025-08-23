@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
+import { API_ENDPOINTS } from '../utils/api';
 
 const PortMap: React.FC = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
@@ -8,7 +9,7 @@ const PortMap: React.FC = () => {
 
   useEffect(() => {
     // Fetch public config for tile template
-    fetch('http://localhost:8000/api/config/public')
+    fetch(API_ENDPOINTS.config)
       .then((r) => r.json())
       .then((cfg) => setTileTemplate(cfg.maptilerTileUrlTemplate || null))
       .catch(() => setTileTemplate(null));

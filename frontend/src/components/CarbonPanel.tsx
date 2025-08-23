@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_ENDPOINTS } from '../utils/api';
 
 interface CarbonEstimate {
   distance_nm: number;
@@ -47,7 +48,7 @@ const CarbonPanel: React.FC = () => {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:8000/api/carbon/estimate', {
+              const response = await fetch(API_ENDPOINTS.carbon, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
