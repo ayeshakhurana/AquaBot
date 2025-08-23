@@ -191,15 +191,15 @@ async def chat(request: ChatRequest):
         if agent != "general":
             # Direct routing if agent specified
             if agent == "weather":
-            response = weather_agent.process_query(request.message)
+                response = weather_agent.process_query(request.message)
             elif agent == "navigation":
-            response = navigation_agent.process_query(request.message)
+                response = navigation_agent.process_query(request.message)
             elif agent == "ports":
-            response = ports_agent.process_query(request.message)
+                response = ports_agent.process_query(request.message)
             elif agent == "documents":
-            response = documents_agent.process_query(request.message)
+                response = documents_agent.process_query(request.message)
             elif agent == "sof_parser":
-            response = sof_parser_agent.process_query(request.message)
+                response = sof_parser_agent.process_query(request.message)
             elif agent == "cp":
                 response = cp_agent.process_query(request.message)
             elif agent == "checklist":
@@ -226,7 +226,7 @@ async def chat(request: ChatRequest):
                 response = "Provide distance (nm) and days at sea to estimate CO2."
             else:
                 # Fallback to Gemini
-            response = gemini_service.generate_response(request.message)
+                response = gemini_service.generate_response(request.message)
         
         # Store in memory and MongoDB
         memory_service.store_interaction(
