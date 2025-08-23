@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_ENDPOINTS } from '../utils/api';
 
 const WeatherWidget: React.FC = () => {
   const [port, setPort] = useState('Singapore');
@@ -10,7 +11,7 @@ const WeatherWidget: React.FC = () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch('http://localhost:8000/api/weather', {
+      const res = await fetch(API_ENDPOINTS.weather, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ port_name: port })

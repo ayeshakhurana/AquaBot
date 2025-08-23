@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_ENDPOINTS } from '../utils/api';
 
 const VoyagePlanner: React.FC = () => {
   const [port1, setPort1] = useState('Rotterdam');
@@ -11,7 +12,7 @@ const VoyagePlanner: React.FC = () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch('http://localhost:8000/api/distance', {
+      const res = await fetch(API_ENDPOINTS.distance, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ port1, port2 })

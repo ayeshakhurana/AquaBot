@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_ENDPOINTS } from '../utils/api';
 
 interface DocumentAnalysis {
   filename: string;
@@ -33,7 +34,7 @@ const DocumentUploader: React.FC = () => {
       form.append('file', file);
       form.append('analysis_type', analysisType);
       
-      const res = await fetch('http://localhost:8000/api/documents/analyze', {
+              const res = await fetch(API_ENDPOINTS.documents, {
         method: 'POST',
         body: form
       });

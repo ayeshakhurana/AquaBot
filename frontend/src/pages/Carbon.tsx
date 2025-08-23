@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_ENDPOINTS } from '../utils/api';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Leaf, Calculator, TrendingDown, BarChart3 } from 'lucide-react';
@@ -25,7 +26,7 @@ const Carbon: React.FC = () => {
     
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/api/carbon/estimate', {
+              const response = await fetch(API_ENDPOINTS.carbon, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
