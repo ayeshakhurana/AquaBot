@@ -21,10 +21,5 @@
   ],
   "env": {
     "VITE_API_URL": "https://aquabot-6pxb.onrender.com"
-  },
-  "functions": {
-    "app/api/**/*.py": {
-      "runtime": "python3.9"
-    }
   }
 } 
