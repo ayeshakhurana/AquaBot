@@ -8,6 +8,7 @@ import json
 import logging
 import os
 import requests
+from datetime import datetime
 
 # Import agents and services
 from .agents.weather import WeatherAgent
@@ -52,6 +53,16 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    return {
+        "status": "healthy",
+        "timestamp": datetime.now().isoformat(),
+        "mongodb": mongodb_service.is_connected if mongodb_service else False,
+        "version": "2.0.0"
+    }
+
 # Add middleware if available
 if MIDDLEWARE_AVAILABLE:
     app.add_middleware(ErrorHandlerMiddleware)
@@ -61,10 +72,11 @@ if MIDDLEWARE_AVAILABLE:
 else:
     print("Running without advanced middleware features")
 
-# CORS middleware
+# CORS middleware - configurable for production
+cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
