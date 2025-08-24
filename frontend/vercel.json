@@ -1,10 +1,6 @@
 {
-  "rootDirectory": "frontend",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
-  "framework": "vite",
-  "env": {
-    "VITE_API_URL": "https://aquabot-6pxb.onrender.com"
-  }
+  "framework": "vite"
 } 
