@@ -1,6 +1,8 @@
 # 🚢 Maritime AI Assistant
 
-> **AI-Powered Maritime Operations Platform** - Transform maritime logistics with intelligent agents, real-time weather, and automated document analysis. Built for the modern shipping industry.
+> **AI-Powered Maritime Operations Platform** - Transform maritime logistics with intelligent agents, real-time weather, and automated document analysis. Built for the modern shipping industry. 
+
+**Updated for Vercel deployment fix**
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
